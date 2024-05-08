@@ -1,5 +1,9 @@
 '''cmd pip install pygame
 pip install replit_play
+
+py -3 -m pip install pygame
+py -3 -m pip install replit_play
+
 '''
 
 import pygame
