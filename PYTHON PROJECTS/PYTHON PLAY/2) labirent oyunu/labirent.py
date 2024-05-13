@@ -2,14 +2,15 @@
 
 import play
 import pygame
+
 frames = 48
 step = 10
 
 # sprite tanımlama
 player = play.new_circle(color='green', x = 0, y = -270, radius = 20, border_color='light green')
 
-# engellerin tanımaması
-wall1 = play.new_box(color='black', x = 0, y = 0, widht = 100, height = 10)
+# engellerin tanımlanması
+wall1 = play.new_box(color='black', x = 0, y = 0, width = 100, height = 10)
 wall2 = play.new_box(color = 'black', x = -50, y = 10, width = 10,height = 100)
 wall3 = play.new_box(color = 'black', x = 50, y = -10, width = 10,height = 100)
 wall4 = play.new_box(color = 'black', x = 100, y = -110, width = 10,height = 100)
@@ -25,7 +26,7 @@ wall13 = play.new_box(color = 'black', x = 100, y = 50, width = 10,height = 300)
 wall14 = play.new_box(color = 'black', x = 0, y = 100, width = 150,height = 10)
 wall15 = play.new_box(color = 'black', x = -130, y = 100, width = 10,height = 300)
 
-# biitiş noktası
+# bitiş noktası
 finish = play.new_text(words='finish', x=0, y=270, font=None, font_size=50)
 
 @play.when_program_starts
@@ -47,7 +48,7 @@ def start():
     wall14.start_physics(can_move=False)
     wall15.start_physics(can_move=False)
 
-# sprite'nin hareketlerni belirlenmesi
+# sprite'nin hareketlerinin belirlenmesi
 @play.repeat_forever
 
 async def game():
@@ -83,5 +84,6 @@ async def game():
         play.new_text(words='YOU WIN!', x = 0, y = 0, font=None, font_size= 100, color='yellow')
 
     await play.timer(seconds=1/frames)
+
 #programın sonu (başlangıcı)
 play.start_program()
